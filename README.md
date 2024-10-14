@@ -91,5 +91,19 @@ RESPONSE:
 ]
 
 ```
+### Conclude OPEN Auction by letting higest bidden win.
+```
+POST http://localhost:8081/auctions/conclude-auction
+Content-Type: application/json
 
+{
+    "auctionId": 2
+}
+
+RESPONSE:
+{
+    "bidId": 6,
+    "bidPrice": 110
+}
+```
 
