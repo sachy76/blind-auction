@@ -1,0 +1,25 @@
+HSQLDB - java -cp ./lib/hsqldb.jar org.hsqldb.server.Server
+java -cp ./lib/hsqldb.jar org.hsqldb.util.DatabaseManager
+
+
+MVN:
+mvn clean package -DskipTests
+java -jar ./target/blind-auction-0.0.1-SNAPSHOT.jar
+
+GIT:
+git pull
+git add -A
+git commit -m "Message explaining my changes"
+git push
+
+
+
+
+-----------------------------------------------------
+http://localhost:8081/auctions/bidding
+Content-Type: application/json
+{
+  "description": "black hat"
+}
+
+-----------------------------------------------------
