@@ -1,5 +1,8 @@
 package com.myproject.blind_auction.controller.auction;
 
+import com.myproject.blind_auction.dto.BidRequest;
+import com.myproject.blind_auction.dto.ConcludeAuctionRequest;
+import com.myproject.blind_auction.model.auction.Bid;
 import com.myproject.blind_auction.repository.AuctionRepository;
 import com.myproject.blind_auction.service.impl.AuctionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,4 +44,10 @@ public class AuctionController {
     public List<Auction> getAllAuctions() {
         return auctionService.getAllAuctions();
     }
+
+    @RequestMapping(method = RequestMethod.POST, path="/auctions/conclude-auction", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public List<Auction> concludeAuction (@RequestBody ConcludeAuctionRequest concludeAuctionRequest) {
+        return auctionService.concludeAuction(concludeAuctionRequest);
+    }
+
 }

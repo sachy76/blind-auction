@@ -46,5 +46,7 @@ public class Bid extends AbstractEntity {
 
     private BigDecimal bidPrice;
 
+    private boolean bidWinner;
+
 
 }
