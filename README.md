@@ -41,7 +41,7 @@ GET http://localhost:8081/auctions
 RESPONSE: Greetings from Auctions team!
 ```
 
-### Create new auction
+### Seller to create new auction
 ```
 POST http://localhost:8081/auctions/create-auction
 Content-Type: application/json
@@ -62,7 +62,7 @@ RESPONSE:
 }
 ```
 
-### Bid against auction
+### Buyer to bid against auction
 ```
 POST http://localhost:8081/auctions/{auctionId}/place-bid
 Content-Type: application/json
@@ -78,7 +78,7 @@ RESPONSE:
 }
 ```
 
-### List all auctions
+### Buyers/Sellers can list all auctions. Buyer must bid above the starting price set by seller set at time of auction creation, else the bid is rejected.
 ```
 GET http://localhost:8081/auctions/get-all-auctions
 
@@ -104,7 +104,7 @@ RESPONSE:
 ]
 
 ```
-### Conclude OPEN Auction by letting higest bidden win.
+### Conclude OPEN Auction by letting highest bidder win. Auction will be marked as SOLD and first highest bidder is flagged as auction winner.
 ```
 POST http://localhost:8081/auctions/conclude-auction
 Content-Type: application/json
