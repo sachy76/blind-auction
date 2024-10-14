@@ -13,6 +13,19 @@
 * [Lombok](https://www.projectlombok.org/features/all)
 * [Hibernate](https://hibernate.org/orm/documentation/)
 * [HSQLDB](https://hsqldb.org/)
+* [Maven](https://maven.apache.org/)
+
+## Instruction to run the application
+### Prerequisites
+- Ensure Java, Maven, Git bash are installed on machine.
+- Ensure all paths/classpaths for Java, Maven are set.
+### Steps
+- git clone https://github.com/sachy76/blind-auction.git
+- cd blind-auction
+- mvn install
+- java -jar ./target/blind-auction-0.0.1-SNAPSHOT.jar
+- run this command to check if application has started - curl http://localhost:8081/auctions
+- execute operational functional endpoints via REST client like Postman
 
 ## Operational Functionalities
 ### User can 
