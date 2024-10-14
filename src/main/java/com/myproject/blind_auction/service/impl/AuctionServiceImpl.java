@@ -23,6 +23,7 @@ public class AuctionServiceImpl implements AuctionService {
 
     public Auction createAuction(AuctionRequest auctionRequest) {
         Auction auction = AuctionDtoMapper.mapAuctionRequestToAuction(auctionRequest);
+        auction.setAuctionStatus("OPEN");
         return auctionRepository.save(auction);
     }
 

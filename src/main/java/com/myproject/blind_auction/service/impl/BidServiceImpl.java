@@ -2,6 +2,7 @@ package com.myproject.blind_auction.service.impl;
 
 import com.myproject.blind_auction.dto.BidRequest;
 import com.myproject.blind_auction.exceptions.IncorrectPriceException;
+import com.myproject.blind_auction.exceptions.NotAllowedException;
 import com.myproject.blind_auction.exceptions.NotFoundException;
 import com.myproject.blind_auction.model.auction.Bid;
 import com.myproject.blind_auction.model.auction.Bidding;
@@ -31,6 +32,9 @@ public class BidServiceImpl implements BidService {
                         "Auction with id " + auctionId + " not found"));
         Bid bid = BidDtoMapper.mapToBid((bidRequest));
 
+        if (!"OPEN".equals(bidding.getAuctionStatus())){
+            throw new NotAllowedException("Bid against non OPEN auction is not allowed");
+        }
         if (bid.getBidPrice().compareTo(bidding.getStartingPrice()) <= 0 ){
             throw new IncorrectPriceException("Bid price must be greater than offer price");
         }

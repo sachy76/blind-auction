@@ -48,4 +48,6 @@ public class Auction extends AbstractEntity {
 
     private BigDecimal startingPrice;
 
+    private String auctionStatus;
+
 }

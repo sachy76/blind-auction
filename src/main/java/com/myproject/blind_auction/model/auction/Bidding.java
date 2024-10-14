@@ -32,7 +32,7 @@ public class Bidding extends Auction{
 
     @Builder
     public Bidding(Long id, BigDecimal startingPrice, String description,BigDecimal currentPrice) {
-        super(id,"bidding",description,startingPrice);
+        super(id,"bidding",description,startingPrice,"");
         this.currentPrice = currentPrice;
         this.bids = new ArrayList<>();
     }

@@ -12,6 +12,4 @@ import java.math.BigDecimal;
 public class AuctionRequest {
     private String description;
     private BigDecimal startingPrice;
-
-
 }
