@@ -30,8 +30,8 @@ public class AuctionController {
     AuctionService auctionService;
 
     @GetMapping("/auctions")
-    public String index() {
-        return "Greetings from Auctions team!";
+    public String index(@AuthenticationPrincipal Jwt jwt ) {
+        return "Hello "+ jwt.getSubject() +". Greetings from Auctions team!";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/auctions/create-auction", consumes = MediaType.APPLICATION_JSON_VALUE)
