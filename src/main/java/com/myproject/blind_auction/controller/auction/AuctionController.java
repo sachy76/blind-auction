@@ -17,6 +17,9 @@ import com.myproject.blind_auction.model.auction.Bidding;
 import com.myproject.blind_auction.dto.BiddingRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.myproject.blind_auction.model.auction.Auction;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
+
 
 import java.util.List;
 
