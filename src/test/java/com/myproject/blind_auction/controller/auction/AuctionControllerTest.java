@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
@@ -19,6 +20,7 @@ import org.springframework.http.HttpMethod;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.springframework.security.oauth2.jwt.Jwt;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = BlindAuctionApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -37,6 +39,7 @@ public class AuctionControllerTest  {
 
     @Test
     public void testBaseURI() throws JSONException {
+
 
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
         ResponseEntity<String> response = restTemplate.exchange(
